@@ -1,9 +1,7 @@
 package no.martinsolaas.origodemo.ui;
 
-import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.Route;
-import com.vaadin.flow.server.VaadinSession;
 import com.vaadin.flow.spring.annotation.SpringComponent;
 import com.vaadin.flow.spring.annotation.UIScope;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,15 +9,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import javax.annotation.PostConstruct;
 
 @UIScope
-@Route(value = BikesView.ROUTE, layout = MainView.class)
+@Route(value = StationsView.ROUTE, layout = MainView.class)
 @SpringComponent
-public class BikesView extends VerticalLayout {
+public class StationsView extends VerticalLayout {
 
     public static final String ROUTE = "";
 
     private final StationCards stationCards;
 
-    public BikesView(@Autowired StationCards stationCards) {
+    public StationsView(@Autowired StationCards stationCards) {
         this.stationCards = stationCards;
     }
 

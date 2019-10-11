@@ -1,11 +1,8 @@
 package no.martinsolaas.origodemo.ui;
 
 import com.vaadin.flow.component.Component;
-import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.applayout.AppLayout;
-import com.vaadin.flow.component.applayout.DrawerToggle;
 import com.vaadin.flow.component.html.Image;
-import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.tabs.Tab;
 import com.vaadin.flow.component.tabs.Tabs;
 import com.vaadin.flow.router.AfterNavigationEvent;
@@ -13,7 +10,6 @@ import com.vaadin.flow.router.AfterNavigationObserver;
 import com.vaadin.flow.router.RouterLink;
 import com.vaadin.flow.server.PWA;
 import com.vaadin.flow.server.StreamResource;
-import com.vaadin.flow.server.VaadinSession;
 import com.vaadin.flow.spring.annotation.UIScope;
 import com.vaadin.flow.theme.Theme;
 import com.vaadin.flow.theme.lumo.Lumo;
@@ -38,7 +34,7 @@ public class MainView extends AppLayout {
         addToNavbar(true, img);
 
         navbarTabs = new Tabs(
-                  new NavTab("Bikes", BikesView.class)
+                  new NavTab("Stations", StationsView.class)
                 , new NavTab("About",  AboutView.class)
         );
 
