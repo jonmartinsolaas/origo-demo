@@ -21,6 +21,7 @@ stations provided by the API in the order presented by the API.
 
 - Java JDK 11 
 - Maven 3.6
+- Node/npm
 - A fairly updated web browser
 
 ### Build and run
@@ -31,7 +32,7 @@ You can run the application in Maven (developers mode):
 
 You can also build a distributable jar file 
 
-`$ mvn clean package -PproductionMode=true`
+`$ mvn clean package -P production`
 
 and run it
 
