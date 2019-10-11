@@ -34,8 +34,8 @@ public class MainView extends AppLayout {
         addToNavbar(true, img);
 
         navbarTabs = new Tabs(
-                  new NavTab("Stations", StationsView.class)
-                , new NavTab("About",  AboutView.class)
+                  new NavTab("Stasjoner", StationsView.class)
+                , new NavTab("Om",  AboutView.class)
         );
 
         navbarTabs.setOrientation(Tabs.Orientation.HORIZONTAL);
