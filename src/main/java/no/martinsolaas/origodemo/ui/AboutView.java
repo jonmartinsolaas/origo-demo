@@ -17,7 +17,7 @@ public class AboutView extends VerticalLayout {
 
     @PostConstruct
     private void init() {
-        add(new Label("About"));
+        add(new Label("Oslo Bysykkel API demo"));
     }
 
 }
