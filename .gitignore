@@ -13,6 +13,11 @@ drivers/
 error-screenshots/
 webpack.generated.js
 
+package.json
+package-lock.json
+webpack.config.js
+webpack.generated.js
+
 ### STS ###
 .apt_generated
 .classpath
