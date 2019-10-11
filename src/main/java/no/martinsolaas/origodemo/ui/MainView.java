@@ -1,0 +1,71 @@
+package no.martinsolaas.origodemo.ui;
+
+import com.vaadin.flow.component.Component;
+import com.vaadin.flow.component.UI;
+import com.vaadin.flow.component.applayout.AppLayout;
+import com.vaadin.flow.component.applayout.DrawerToggle;
+import com.vaadin.flow.component.html.Image;
+import com.vaadin.flow.component.notification.Notification;
+import com.vaadin.flow.component.tabs.Tab;
+import com.vaadin.flow.component.tabs.Tabs;
+import com.vaadin.flow.router.AfterNavigationEvent;
+import com.vaadin.flow.router.AfterNavigationObserver;
+import com.vaadin.flow.router.RouterLink;
+import com.vaadin.flow.server.PWA;
+import com.vaadin.flow.server.StreamResource;
+import com.vaadin.flow.server.VaadinSession;
+import com.vaadin.flow.spring.annotation.UIScope;
+import com.vaadin.flow.theme.Theme;
+import com.vaadin.flow.theme.lumo.Lumo;
+
+import javax.annotation.PostConstruct;
+
+@UIScope
+@Theme(Lumo.class)
+@PWA(name = "Oslo Origo bikeshare demo", shortName = "Bikeshare demo")
+public class MainView extends AppLayout {
+
+    Tabs navbarTabs;
+
+    @PostConstruct
+    public void init() {
+
+        Image img = new Image(new StreamResource("logo-image.png", () ->
+            MainView.class.getClassLoader().getResourceAsStream("META-INF/resources/icons/icon.png")
+            ), "Logo");
+
+        img.setHeight("30px");
+        addToNavbar(true, img);
+
+        navbarTabs = new Tabs(
+                  new NavTab("Bikes", BikesView.class)
+                , new NavTab("About",  AboutView.class)
+        );
+
+        navbarTabs.setOrientation(Tabs.Orientation.HORIZONTAL);
+        navbarTabs.setSizeFull();
+
+        addToNavbar(true, navbarTabs);
+        this.setPrimarySection(Section.NAVBAR);
+
+    }
+
+    static class NavTab extends Tab implements AfterNavigationObserver {
+
+        public final RouterLink link;
+
+        public NavTab(String text, Class<? extends Component> navigationTarget) {
+            link = new RouterLink(null, navigationTarget);
+            //link.add(VaadinIcon.BULLSEYE.create());
+            link.add(text);
+            this.add(link);
+        }
+
+        @Override
+        public void afterNavigation(AfterNavigationEvent event) {
+            if (event.getLocation().getFirstSegment().equals(link.getHref()))
+                ((Tabs)this.getParent().get()).setSelectedTab(this);
+        }
+
+    }
+}
