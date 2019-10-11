@@ -36,7 +36,7 @@ and run it
 
 In both cases the app will be available at http://localhost:8080
 
-##Configuration
+## Configuration
 
 There is only one configuration parameter; the url to the REST api: 
 
