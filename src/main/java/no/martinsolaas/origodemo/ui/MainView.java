@@ -18,7 +18,7 @@ import javax.annotation.PostConstruct;
 
 @UIScope
 @Theme(Lumo.class)
-@PWA(name = "Oslo Origo bikeshare demo", shortName = "Bikeshare demo")
+@PWA(name = "Oslo Bysykkel API demo", shortName = "Bysykkel demo")
 public class MainView extends AppLayout {
 
     Tabs navbarTabs;
@@ -52,7 +52,6 @@ public class MainView extends AppLayout {
 
         public NavTab(String text, Class<? extends Component> navigationTarget) {
             link = new RouterLink(null, navigationTarget);
-            //link.add(VaadinIcon.BULLSEYE.create());
             link.add(text);
             this.add(link);
         }
