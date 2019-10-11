@@ -17,12 +17,16 @@ stations provided by the API in the order presented by the API.
 
 ## How to build and run
 
-### Requirements
+### Requirements for build and running
 
 - Java JDK 11 
-- Maven 3.6
+- Maven 3.6 
 - Node/npm
 - A fairly updated web browser
+
+To run the production mode built jar file you only need 
+
+- Java JRE 11.
 
 ### Build and run
 
