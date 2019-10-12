@@ -45,12 +45,8 @@ public class StationFacade {
             StationStatusDto status = stationStatusMap.get(information.getStationId());
 
             if (status != null) {
-                try {
-                    stationListResult.add(new Station(Integer.parseInt(information.getStationId()), information.getName()
-                            , status.getNumDocksAvailable(), status.getNumBikesAvailable()));
-                } catch (Exception e) {
-                    log.error("Insuficcient data to create Station instance: {}", e.getMessage());
-                }
+                stationListResult.add(new Station(Integer.parseInt(information.getStationId()), information.getName()
+                        , status.getNumDocksAvailable(), status.getNumBikesAvailable()));
             } else {
                 log.warn("Status not available for station {}.", information.getStationId());
             }
