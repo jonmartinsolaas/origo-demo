@@ -67,7 +67,6 @@ public class StationCards extends HorizontalLayout {
         }
     }
 
-
 }
 
 

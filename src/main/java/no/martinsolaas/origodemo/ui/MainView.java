@@ -21,7 +21,7 @@ import javax.annotation.PostConstruct;
 @PWA(name = "Oslo Bysykkel API demo", shortName = "Bysykkel demo")
 public class MainView extends AppLayout {
 
-    Tabs navbarTabs;
+    private Tabs navbarTabs;
 
     @PostConstruct
     public void init() {

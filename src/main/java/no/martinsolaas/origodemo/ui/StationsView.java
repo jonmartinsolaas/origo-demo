@@ -23,7 +23,6 @@ public class StationsView extends VerticalLayout {
 
     @PostConstruct
     private void init() {
-
         add(stationCards);
     }
 }
