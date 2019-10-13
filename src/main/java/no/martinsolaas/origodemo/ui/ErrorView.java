@@ -11,7 +11,7 @@ import org.apache.commons.lang3.exception.ExceptionUtils;
 import javax.servlet.http.HttpServletResponse;
 
 @Slf4j
-@ParentLayout(MainView.class)
+@ParentLayout(MainLayout.class)
 public class ErrorView extends InternalServerError {
 
     @Override

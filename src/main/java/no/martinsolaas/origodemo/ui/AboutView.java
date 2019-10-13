@@ -9,7 +9,7 @@ import com.vaadin.flow.spring.annotation.UIScope;
 import javax.annotation.PostConstruct;
 
 @UIScope
-@Route(value = AboutView.ROUTE, layout = MainView.class)
+@Route(value = AboutView.ROUTE, layout = MainLayout.class)
 @SpringComponent
 public class AboutView extends VerticalLayout {
 

@@ -19,7 +19,7 @@ import javax.annotation.PostConstruct;
 @UIScope
 @Theme(Lumo.class)
 @PWA(name = "Oslo Bysykkel API demo", shortName = "Bysykkel demo")
-public class MainView extends AppLayout {
+public class MainLayout extends AppLayout {
 
     private Tabs navbarTabs;
 
@@ -27,7 +27,7 @@ public class MainView extends AppLayout {
     public void init() {
 
         Image img = new Image(new StreamResource("logo-image.png", () ->
-            MainView.class.getClassLoader().getResourceAsStream("META-INF/resources/icons/icon.png")
+            MainLayout.class.getClassLoader().getResourceAsStream("META-INF/resources/icons/icon.png")
             ), "Logo");
 
         img.setHeight("30px");

@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import javax.annotation.PostConstruct;
 
 @UIScope
-@Route(value = StationsView.ROUTE, layout = MainView.class)
+@Route(value = StationsView.ROUTE, layout = MainLayout.class)
 @SpringComponent
 public class StationsView extends VerticalLayout {
 
