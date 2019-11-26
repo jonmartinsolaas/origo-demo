@@ -1,5 +1,6 @@
 package no.martinsolaas.origodemo;
 
+import com.vaadin.flow.spring.annotation.EnableVaadin;
 import no.martinsolaas.origodemo.service.StationFacade;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
@@ -10,6 +11,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 @SpringBootApplication
 @EnableFeignClients
 @EnableCircuitBreaker
+@EnableVaadin
 public class OrigoDemoApplication {
 
 	private final StationFacade stationFacade;
